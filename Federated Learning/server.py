@@ -1,6 +1,5 @@
 import argparse
 from typing import List, Tuple
-
 import flwr as fl
 from flwr.common import Metrics
 
@@ -32,24 +31,16 @@ parser.add_argument(
 )
 
 
-# Define metric aggregation function
 def weighted_average(metrics: List[Tuple[int, Metrics]]) -> Metrics:
-    """This function averages the `accuracy` metric sent by the clients in a `evaluate`
-    stage (i.e. clients received the global model and evaluate it on their local
-    validation sets)."""
-    # Multiply accuracy of each client by number of examples used
     accuracies = [num_examples * m["accuracy"] for num_examples, m in metrics]
     examples = [num_examples for num_examples, _ in metrics]
-
-    # Aggregate and return custom metric (weighted average)
     return {"accuracy": sum(accuracies) / sum(examples)}
 
 
 def fit_config(server_round: int):
-    """Return a configuration with static batch size and (local) epochs."""
     config = {
-        "epochs": 3,  # Number of local epochs done by clients
-        "batch_size": 16,  # Batch size to use by clients during fit()
+        "epochs": 3,
+        "batch_size": 16,
     }
     return config
 
@@ -58,8 +49,6 @@ def main():
     args = parser.parse_args()
 
     print(args)
-
-    # Define strategy
     strategy = fl.server.strategy.FedAvg(
         fraction_fit=args.sample_fraction,
         fraction_evaluate=args.sample_fraction,
@@ -68,7 +57,6 @@ def main():
         evaluate_metrics_aggregation_fn=weighted_average,
     )
 
-    # Start Flower server
     fl.server.start_server(
         server_address=args.server_address,
         config=fl.server.ServerConfig(num_rounds=3),

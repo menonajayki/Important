@@ -1,0 +1,6 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 5
+names: ['forklift', 'pallet', 'pallet_truck', 'small_load_carrier', 'stillage']

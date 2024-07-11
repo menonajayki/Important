@@ -5,3 +5,4 @@ torchvision
 tqdm
 tensorflow
 scikit-learn
+paho-mqtt

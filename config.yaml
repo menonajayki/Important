@@ -1,0 +1,6 @@
+#model: runs/pose/yolov8n_a2/weights/best.pt
+model: yolov8n-pose.pt
+delay: 2
+broker: localhost
+port: 1883
+topic: camera/video

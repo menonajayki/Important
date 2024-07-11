@@ -1,1 +1,1 @@
-Time: {'preprocess': 1.9991397857666016, 'inference': 110.09049415588379, 'postprocess': 2.0020008087158203} ms
+Time: {'preprocess': 11.999130249023438, 'inference': 243.74675750732422, 'postprocess': 1.989603042602539} ms

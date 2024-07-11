@@ -2,14 +2,15 @@ import argparse
 from typing import List, Tuple
 import flwr as fl
 from flwr.common import Metrics
+from ultralytics import YOLO
 
-
+# Set server configuration
 parser = argparse.ArgumentParser(description="Flower Embedded devices")
 parser.add_argument(
     "--server_address",
     type=str,
-    default="0.0.0.0:8080",
-    help=f"gRPC server address (default '0.0.0.0:8080')",
+    default="192.168.0.185:8080",
+    help=f"gRPC server address (default '192.168.0.185:8080')",
 )
 parser.add_argument(
     "--rounds",
@@ -32,9 +33,9 @@ parser.add_argument(
 
 
 def weighted_average(metrics: List[Tuple[int, Metrics]]) -> Metrics:
-    accuracies = [num_examples * m["accuracy"] for num_examples, m in metrics]
+    accuracies = [num_examples * m["map50"] for num_examples, m in metrics]
     examples = [num_examples for num_examples, _ in metrics]
-    return {"accuracy": sum(accuracies) / sum(examples)}
+    return {"map50": sum(accuracies) / sum(examples)}
 
 
 def fit_config(server_round: int):
@@ -48,7 +49,6 @@ def fit_config(server_round: int):
 def main():
     args = parser.parse_args()
 
-    print(args)
     strategy = fl.server.strategy.FedAvg(
         fraction_fit=args.sample_fraction,
         fraction_evaluate=args.sample_fraction,
@@ -59,7 +59,7 @@ def main():
 
     fl.server.start_server(
         server_address=args.server_address,
-        config=fl.server.ServerConfig(num_rounds=3),
+        config=fl.server.ServerConfig(num_rounds=args.rounds),
         strategy=strategy,
     )
 

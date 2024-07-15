@@ -5,29 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74c0ebb0-b79d-47ad-a3f5-5930ad2a7826" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Federated Learning/client.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Federated Learning/fed yolo flower.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MQTT/img2mqtt.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MQTT/mqtt publish.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MQTT/mqtt subscribe.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MQTT/mqtt2img.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MQTT/mqtt2yolo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MQTT/test.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MQTT/test_recieved.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MQTT/yolo2mqtt.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/yolov8n-pose.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rollPitchYaw.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/training.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Federated Learning/Client_FedMQTT.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Federated Learning/Sever_FedMQTT.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Federated Learning/client_tf.py" beforeDir="false" afterPath="$PROJECT_DIR$/Federated Learning/client_tf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Federated Learning/client_yolo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Federated Learning/client_yolo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Federated Learning/federated_requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Federated Learning/federated_requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Federated Learning/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/Federated Learning/server.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hardware Benchmarking/benchmark.png" beforeDir="false" afterPath="$PROJECT_DIR$/Hardware Benchmarking/benchmark.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hardware Benchmarking/benchmark_requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Hardware Benchmarking/benchmark_requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hardware Benchmarking/benchmark_results.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Hardware Benchmarking/benchmark_results.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MQTT/img2mqtt.py" beforeDir="false" afterPath="$PROJECT_DIR$/MQTT/img2mqtt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MQTT/telocateTagsMQTT.py" beforeDir="false" afterPath="$PROJECT_DIR$/MQTT/telocateTagsMQTT.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Preprocessing/01.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Preprocessing/collectImages.py" beforeDir="false" afterPath="$PROJECT_DIR$/Preprocessing/collectImages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,35 +43,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.benchmark.executor": "Run",
-    "Python.client_yolo.executor": "Run",
-    "Python.img2mqtt.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.mqtt publish.executor": "Run",
-    "Python.mqtt subscribe.executor": "Run",
-    "Python.mqtt2img.executor": "Run",
-    "Python.mqtt2yolo.executor": "Run",
-    "Python.rollPitchYaw.executor": "Run",
-    "Python.server.executor": "Run",
-    "Python.test.executor": "Run",
-    "Python.tpuconversion.executor": "Run",
-    "Python.yolo2mqtt.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Ajay/PycharmProjects/Master_Thesis_Ajay/MQTT"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.benchmark.executor&quot;: &quot;Run&quot;,
+    &quot;Python.client_yolo.executor&quot;: &quot;Run&quot;,
+    &quot;Python.collectImages.executor&quot;: &quot;Run&quot;,
+    &quot;Python.img2mqtt.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.mqtt publish.executor&quot;: &quot;Run&quot;,
+    &quot;Python.mqtt subscribe.executor&quot;: &quot;Run&quot;,
+    &quot;Python.mqtt2img.executor&quot;: &quot;Run&quot;,
+    &quot;Python.mqtt2yolo.executor&quot;: &quot;Run&quot;,
+    &quot;Python.rollPitchYaw.executor&quot;: &quot;Run&quot;,
+    &quot;Python.server.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_trained.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tpuconversion.executor&quot;: &quot;Run&quot;,
+    &quot;Python.yolo2mqtt.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Ajay/PycharmProjects/Master_Thesis_Ajay/Models&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Ajay\PycharmProjects\Master_Thesis_Ajay\MQTT" />
       <recent name="C:\Users\Ajay\PycharmProjects\Master_Thesis_Ajay\Models" />
+      <recent name="C:\Users\Ajay\PycharmProjects\Master_Thesis_Ajay\Preprocessing\RawImages" />
+      <recent name="C:\Users\Ajay\PycharmProjects\Master_Thesis_Ajay\MQTT" />
       <recent name="C:\Users\Ajay\PycharmProjects\Master_Thesis_Ajay\Federated Learning" />
       <recent name="C:\Users\Ajay\PycharmProjects\Master_Thesis_Ajay\Hardware Benchmarking" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Ajay\PycharmProjects\Master_Thesis_Ajay\Models" />
+      <recent name="C:\Users\Ajay\PycharmProjects\Master_Thesis_Ajay\Preprocessing" />
       <recent name="C:\Users\Ajay\PycharmProjects\Master_Thesis_Ajay" />
       <recent name="C:\Users\Ajay\PycharmProjects\Master_Thesis_Ajay\Federated Learning\MQTT" />
       <recent name="C:\Users\Ajay\PycharmProjects\Master_Thesis_Ajay\Federated Learning" />

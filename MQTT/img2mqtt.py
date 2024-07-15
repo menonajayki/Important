@@ -6,9 +6,9 @@ import paho.mqtt.client as mqtt
 from datetime import datetime
 
 # MQTT broker details
-broker = "localhost"
+broker = "10.198.153.204"
 port = 1883
-topic = "camera/video"
+topic = "1/2/3/4/5/gs1:4054977:6261409141030.camera-3/data"
 
 
 # Function to create JSON payload
@@ -26,7 +26,7 @@ def create_json_payload(frame):
         },
         "security": {
             "publisher": {
-                "id": "gs1:4054977:6261409141030.camera-1",
+                "id": "gs1:4054977:6261409141030.camera-3",
                 "name": "camera",
                 "location": "measuringRoom"
             },
@@ -34,7 +34,7 @@ def create_json_payload(frame):
             "signature": "123456789"
         },
         "data": {
-            "id": "gs1:4054977:6261409141030.camera-1",
+            "id": "gs1:4054977:6261409141030.camera-3",
             "timestamp": datetime.utcnow().isoformat() + "Z",
             "category": "processData/measuringValue",
             "content": {
@@ -70,7 +70,7 @@ try:
         client.publish(topic, json_payload)
 
         # Wait for 5 seconds
-        time.sleep(5)
+        time.sleep(2)
 
 finally:
     # Release the camera and MQTT client

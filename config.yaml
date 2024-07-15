@@ -1,5 +1,5 @@
 #model: runs/pose/yolov8n_a2/weights/best.pt
-model: yolov8n-pose.pt
+model: trained200.pt
 delay: 2
 broker: localhost
 port: 1883

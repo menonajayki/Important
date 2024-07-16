@@ -5,16 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74c0ebb0-b79d-47ad-a3f5-5930ad2a7826" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Federated Learning/Client_FedMQTT.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Federated Learning/Sever_FedMQTT.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hardware Benchmarking/benchmark.png" beforeDir="false" afterPath="$PROJECT_DIR$/Hardware Benchmarking/benchmark.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hardware Benchmarking/benchmark_results.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Hardware Benchmarking/benchmark_results.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MQTT/img2mqtt.py" beforeDir="false" afterPath="$PROJECT_DIR$/MQTT/img2mqtt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MQTT/telocateTagsMQTT.py" beforeDir="false" afterPath="$PROJECT_DIR$/MQTT/telocateTagsMQTT.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Preprocessing/01.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Preprocessing/collectImages.py" beforeDir="false" afterPath="$PROJECT_DIR$/Preprocessing/collectImages.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
